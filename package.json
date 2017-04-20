@@ -7,13 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "encodeurl": "^1.0.1",
-    "fishingrod": "^3.5.5"
+    "fishingrod": "^3.5.5",
+    "oauth-percent-encode": "^0.1.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
