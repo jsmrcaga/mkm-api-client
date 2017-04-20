@@ -1,0 +1,22 @@
+{
+  "name": "mkm-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mkm.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "encodeurl": "^1.0.1",
+    "fishingrod": "^3.5.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
