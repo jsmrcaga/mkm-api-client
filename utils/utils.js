@@ -42,7 +42,6 @@ utils.__mkmrequest = function(keys, method, path, data, headers){
 	if(data){
 		params.data = data;
 	}
-	console.log('MKM REQUEST', params);
 	return fishingrod.fish(params);
 };
 

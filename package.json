@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fishingrod": "^3.5.5",
+    "fishingrod": "^3.7.0",
     "oauth-percent-encode": "^0.1.2"
   },
   "devDependencies": {
