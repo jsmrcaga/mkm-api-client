@@ -1,6 +1,6 @@
 {
   "name": "mkm-api",
-  "version": "1.0.0",
+  "version": "1.7.0",
   "description": "",
   "main": "mkm.js",
   "directories": {
@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "fishingrod": "^3.7.0",
-    "oauth-percent-encode": "^0.1.2"
+    "oauth-percent-encode": "^0.1.2",
+    "utf8": "^2.1.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",

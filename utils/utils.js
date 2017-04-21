@@ -1,6 +1,7 @@
 const fishingrod = require('fishingrod');
 const percentencode = require('oauth-percent-encode');
 const Crypto = require('crypto');
+const utf8 = require('utf8');
 
 var utils = {};
 utils.debug = false;
@@ -10,15 +11,29 @@ utils.debug = false;
 	// !secret
 	// access_token_secret
 	// access_token
-utils.get = function(keys, path, data, headers){
+utils.get = function(keys, path, data, headers, tokens){
 	return utils.__mkmrequest(keys, 'GET', path, data, headers);
 };
 
-utils.post = function(keys, path, data, headers){
+utils.post = function(keys, path, data, headers, tokens){
 	return utils.__mkmrequest(keys, 'POST', path, data, headers);
 };
 
-utils.__mkmrequest = function(keys, method, path, data, headers){
+utils.__mkmrequest = function(keys, method, path, data, headers, tokens){
+
+	if(data){
+		for(var k in data){
+			if(typeof data[k] === 'string'){
+				data[k] = data[k].replace(/\'/g, ' ');
+			}
+		}
+	}
+
+	if(tokens){
+		keys.access_token = tokens.access_token;
+		keys.access_token_secret = access_token_secret;
+	}
+
 	var oauth_header = getOauthHeader(method, path, {
 		oauth_version : '1.0',
 		oauth_timestamp: Math.round(Date.now() / 1000),
@@ -42,6 +57,11 @@ utils.__mkmrequest = function(keys, method, path, data, headers){
 	if(data){
 		params.data = data;
 	}
+
+	if(utils.debug){
+		console.log('[MKM-API] Request', params);
+	}
+
 	return fishingrod.fish(params);
 };
 
@@ -89,7 +109,7 @@ function buildParams(params, data){
 	params = makeParams(params, data);
 	var str = [];
 	for(var k in params){
-		str.push(k + '=' + params[k]);
+		str.push(k + '=' + encodeURIComponent(params[k]));
 	}
 	str = str.join('&');
 	return str;
