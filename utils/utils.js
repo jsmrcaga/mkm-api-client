@@ -1,7 +1,6 @@
 const fishingrod = require('fishingrod');
 const percentencode = require('oauth-percent-encode');
 const Crypto = require('crypto');
-const utf8 = require('utf8');
 
 var utils = {};
 utils.debug = false;
