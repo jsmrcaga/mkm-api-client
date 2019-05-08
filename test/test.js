@@ -33,7 +33,7 @@ describe('Return tests', function(){
 	});
 
 	it('Should get final string', function(){
-		expect(Client.__utils.getFinalString('GET','/ws/v1.1/account', params)).to.be.eql('GET&https%3A%2F%2Fwww.mkmapi.eu%2Fws%2Fv1.1%2Faccount&oauth_consumer_key%3DbfaD9xOU0SXBhtBP%26oauth_nonce%3D53eb1f44909d6%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1407917892%26oauth_token%3DlBY1xptUJ7ZJSK01x4fNwzw8kAe5b10Q%26oauth_version%3D1.0');
+		expect(Client.__utils.getFinalString('GET','/ws/v1.1/account', params)).to.be.eql('GET&https%3A%2F%2Fapi.cardmarket.com%2Fws%2Fv1.1%2Faccount&oauth_consumer_key%3DbfaD9xOU0SXBhtBP%26oauth_nonce%3D53eb1f44909d6%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1407917892%26oauth_token%3DlBY1xptUJ7ZJSK01x4fNwzw8kAe5b10Q%26oauth_version%3D1.0');
 	});
 
 	it('Should get correct signature from API Docs', function(){
