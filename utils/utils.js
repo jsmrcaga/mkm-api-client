@@ -49,7 +49,7 @@ utils.__mkmrequest = function(keys, method, path, data, headers, tokens){
 	var params = {
 		https: true,
 		method: method,
-		host: utils.debug ? 'sandbox.mkmapi.eu' : 'www.mkmapi.eu',
+		host: utils.debug ? 'sandbox.cardmarket.com' : 'api.cardmarket.com',
 		path: path,
 		headers:headers
 	};
@@ -77,7 +77,7 @@ function getOauthHeader(method, path, params, data, keys){
 utils.getOauthHeader = getOauthHeader;
 
 function getUri(path){
-	return 'https://' + (utils.debug ? 'sandbox.mkmapi.eu' : 'www.mkmapi.eu' ) + path;
+	return 'https://' + (utils.debug ? 'sandbox.cardmarket.com' : 'api.cardmarket.com' ) + path;
 }
 
 function getSignature(method, path, params, data, keys){
