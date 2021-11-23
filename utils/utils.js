@@ -117,8 +117,12 @@ utils.buildParams = buildParams;
 
 function makeParams(params, data){
 	const needed_params = ['version', 'timestamp', 'nonce', 'consumer_key', 'token', 'signature_method'];
-	for(var k in data){
-		params[k] = data[k];
+	if(params.method === "GET") {
+
+		for(var k in data){
+			params[k] = data[k];
+		}
+
 	}
 	params = sortObject(params);
 	for(var k of needed_params){
